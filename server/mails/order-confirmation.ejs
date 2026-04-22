@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Confirmed - Eduvora</title>
+  <style>
+    @media only screen and (max-width: 600px) {
+      .container { width: 100% !important; margin: 20px 0 !important; }
+      .order-grid td { display: block !important; width: 100% !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6f8; font-family:'Segoe UI', Arial, sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" class="container"
+          style="background:#ffffff; margin:40px 0; border-radius:16px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.1);">
+
+          <!-- Header -->
+          <tr>
+            <td align="center" style="background-color:#1e3c7c; padding:30px 30px 40px 30px;">
+              <div style="background:#ffffff; padding:15px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 12px rgba(0,0,0,0.1); display:inline-block;" class="logo-container">
+                <img src="cid:logo" alt="Eduvora" style="width:280px; height:auto; max-width:100%; display:block;" />
+              </div>
+              <p style="color:#e0e7ff; margin:0; font-size:16px; font-weight:400;">Learn. Grow. Succeed.</p>
+            </td>
+          </tr>
+
+          <!-- Success Badge -->
+          <tr>
+            <td align="center" style="padding:30px 30px 0;">
+              <div style="display:inline-block; background:#f0fdf4; border:1.5px solid #86efac; border-radius:50px; padding:10px 24px;">
+                <span style="color:#15803d; font-size:14px; font-weight:600;">✓ &nbsp;Payment Successful</span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:24px 30px 10px; color:#333;">
+              <h2 style="margin-top:0; font-size:22px; color:#1a202c;">
+                You're enrolled, <span style="color:#1e3c7c;"><%= user.name %></span>! 🎉
+              </h2>
+              <p style="font-size:15px; line-height:1.7; color:#555; margin-bottom:24px;">
+                Thanks for your purchase! Your order has been confirmed and you now have full access to your course. Get ready to level up your skills!
+              </p>
+            </td>
+          </tr>
+
+          <!-- Order Card -->
+          <tr>
+            <td style="padding:0 30px 24px;">
+              <div style="background:#f8faff; border:1.5px solid #dbeafe; border-radius:12px; overflow:hidden;">
+
+                <div style="background:#1e3c7c; padding:14px 20px;">
+                  <p style="margin:0; font-size:13px; color:#93c5fd; letter-spacing:0.5px; text-transform:uppercase;">Order Summary</p>
+                </div>
+
+                <div style="padding:20px;">
+                  <!-- Course Name -->
+                  <div style="margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid #e2e8f0;">
+                    <p style="margin:0 0 4px; font-size:12px; color:#94a3b8; text-transform:uppercase; letter-spacing:0.5px;">Course</p>
+                    <p style="margin:0; font-size:16px; font-weight:600; color:#1a202c;"><%= order.name %></p>
+                  </div>
+
+                  <!-- Order ID & Date -->
+                  <table width="100%" cellpadding="0" cellspacing="0" class="order-grid">
+                    <tr>
+                      <td style="padding:6px 0; width:50%;">
+                        <p style="margin:0 0 3px; font-size:12px; color:#94a3b8; text-transform:uppercase; letter-spacing:0.5px;">Order ID</p>
+                        <p style="margin:0; font-size:14px; font-weight:600; color:#334155; font-family:monospace;">#<%= order._id %></p>
+                      </td>
+                      <td style="padding:6px 0; width:50%;">
+                        <p style="margin:0 0 3px; font-size:12px; color:#94a3b8; text-transform:uppercase; letter-spacing:0.5px;">Date</p>
+                        <p style="margin:0; font-size:14px; font-weight:600; color:#334155;"><%= order.date %></p>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <div style="border-top:1px dashed #e2e8f0; margin:16px 0;"></div>
+
+                  <!-- Price -->
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td style="font-size:14px; color:#64748b;">Amount Paid</td>
+                      <td align="right">
+                        <span style="font-size:22px; font-weight:700; color:#1e3c7c;">$<%= order.price %></span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- CTA Button -->
+          <tr>
+            <td style="padding:0 30px 30px;" align="center">
+              <a href="<%= dashboardUrl %>" style="display:inline-block; background:#1e3c7c; color:#ffffff; text-decoration:none; padding:14px 36px; border-radius:8px; font-size:15px; font-weight:600;">
+                Start Learning Now &rarr;
+              </a>
+              <p style="font-size:13px; color:#94a3b8; margin-top:16px;">Access your course anytime from your dashboard.</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#f7fafc; padding:24px 30px; text-align:center; border-top:1px solid #e2e8f0;">
+              <p style="font-size:13px; color:#a0aec0; margin:0 0 6px;">
+                © <%= new Date().getFullYear() %> Eduvora. All rights reserved.
+              </p>
+              <p style="font-size:11px; color:#cbd5e0; margin:0;">Empowering learners worldwide.</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
